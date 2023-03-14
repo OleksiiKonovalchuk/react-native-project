@@ -4,7 +4,10 @@ import { StyleSheet, Text, View } from 'react-native'
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<Text>Let's try and do some cool stuff bruh!</Text>
+			<Text>
+				If i scan QR I can open the app, but if i try to use "a" or "shift a" in terminal it says
+				that "Error: The system cannot find the path specified."
+			</Text>
 			<StatusBar style="auto" />
 		</View>
 	)
