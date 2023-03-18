@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
 
+import RegistrationScreen from './Screens/Register/RegistrationScreen'
+import LoginScreen from './Screens/Login/LoginScreen'
+
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<Text>
-				If i scan QR I can open the app, but if i try to use "a" or "shift a" in terminal it says
-				that "Error: The system cannot find the path specified."
-			</Text>
+			<RegistrationScreen />
+			{/* <LoginScreen /> */}
 			<StatusBar style="auto" />
 		</View>
 	)
