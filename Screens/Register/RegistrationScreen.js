@@ -23,7 +23,12 @@ export default function RegistrationScreen() {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [user, setUser] = useState({})
+
 	const [keyboardShown, setkeyboardShown] = useState(false)
+	const [loginFocused, setLoginFocused] = useState(false)
+	const [emailFocused, setEmailFocused] = useState(false)
+	const [passwordFocused, setPasswordFocused] = useState(false)
+
 	const keyboardHide = () => {
 		Keyboard.dismiss()
 		setkeyboardShown(false)
@@ -51,21 +56,29 @@ export default function RegistrationScreen() {
 						<View style={css.inputWrapper}>
 							<TextInput
 								value={login}
-								style={css.input}
+								style={{ ...css.input, borderColor: loginFocused ? '#FF6C00' : '#E8E8E8' }}
 								placeholder="Login"
 								placeholderTextColor="#BDBDBD"
 								onChangeText={(text) => setLogin(text)}
-								onFocus={() => setkeyboardShown(true)}
+								onFocus={() => {
+									setkeyboardShown(true)
+									setLoginFocused(true)
+								}}
+								onBlur={() => setLoginFocused(false)}
 							/>
 							<TextInput
 								value={email}
 								keyboardType="email-address"
 								inputMode="email"
-								style={css.input}
+								style={{ ...css.input, borderColor: emailFocused ? '#FF6C00' : '#E8E8E8' }}
 								placeholder="Email"
 								placeholderTextColor="#BDBDBD"
 								onChangeText={(text) => setEmail(text)}
-								onFocus={() => setkeyboardShown(true)}
+								onFocus={() => {
+									setkeyboardShown(true)
+									setEmailFocused(true)
+								}}
+								onBlur={() => setEmailFocused(false)}
 							/>
 							<View style={css.passwordWrapper}>
 								<Text style={css.showPassword}>Show</Text>
@@ -73,11 +86,15 @@ export default function RegistrationScreen() {
 									value={password}
 									secureTextEntry={true}
 									textContentType="newPassword"
-									style={css.input}
+									style={{ ...css.input, borderColor: passwordFocused ? '#FF6C00' : '#E8E8E8' }}
 									placeholder="Password"
 									placeholderTextColor="#BDBDBD"
 									onChangeText={(text) => setPassword(text)}
-									onFocus={() => setkeyboardShown(true)}
+									onFocus={() => {
+										setkeyboardShown(true)
+										setPasswordFocused(true)
+									}}
+									onBlur={() => setPasswordFocused(false)}
 								/>
 							</View>
 						</View>
@@ -87,7 +104,7 @@ export default function RegistrationScreen() {
 							onPress={() => {
 								keyboardHide()
 								setUser({ login, email, password })
-								console.log(user)
+								console.log({ login, email, password })
 							}}
 						>
 							<Text style={css.buttonText}>Register Now</Text>
