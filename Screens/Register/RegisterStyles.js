@@ -75,6 +75,7 @@ const css = StyleSheet.create({
 		right: 16,
 		top: '50%',
 		transform: [{ translateY: -8.5 }],
+		zIndex: 1,
 
 		fontWeight: 400,
 		fontSize: 16,

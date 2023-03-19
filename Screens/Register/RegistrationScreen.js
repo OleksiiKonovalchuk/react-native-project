@@ -16,7 +16,7 @@ import {
 import css from './RegisterStyles'
 
 const bg = require('../../img/bg.jpg')
-const add = require('../../img/add.svg')
+const add = require('../../img/add.png')
 
 export default function RegistrationScreen() {
 	const [login, setLogin] = useState('')

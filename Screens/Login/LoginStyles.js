@@ -57,6 +57,7 @@ const css = StyleSheet.create({
 		fontWeight: 400,
 		fontSize: 16,
 		lineHeight: 19,
+		zIndex: 1,
 
 		color: '#1B4371',
 	},
