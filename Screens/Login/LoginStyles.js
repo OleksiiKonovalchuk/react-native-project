@@ -15,7 +15,7 @@ const css = StyleSheet.create({
 		resizeMode: 'cover',
 	},
 	header: {
-		fontWeight: 500,
+		fontWeight: 'bold',
 		fontSize: 30,
 		lineHeight: 35,
 		alignSelf: 'center',
@@ -54,7 +54,6 @@ const css = StyleSheet.create({
 		top: '50%',
 		transform: [{ translateY: -8.5 }],
 
-		fontWeight: 400,
 		fontSize: 16,
 		lineHeight: 19,
 		zIndex: 1,
@@ -70,7 +69,6 @@ const css = StyleSheet.create({
 	buttonText: {
 		textAlign: 'center',
 		color: '#FFFFFF',
-		fontWeight: 400,
 		fontSize: 16,
 		lineHeight: 19,
 	},
@@ -78,7 +76,6 @@ const css = StyleSheet.create({
 		marginTop: 16,
 		textAlign: 'center',
 		color: '#1B4371',
-		fontWeight: 400,
 		fontSize: 16,
 		lineHeight: 19,
 	},
