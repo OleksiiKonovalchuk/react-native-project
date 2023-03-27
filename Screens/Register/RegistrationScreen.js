@@ -18,7 +18,7 @@ import css from './RegisterStyles'
 const bg = require('../../img/bg.jpg')
 const add = require('../../img/add.png')
 
-export default function RegistrationScreen() {
+export default function RegistrationScreen({ navigation }) {
 	const [login, setLogin] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
@@ -109,7 +109,11 @@ export default function RegistrationScreen() {
 						>
 							<Text style={css.buttonText}>Register Now</Text>
 						</TouchableOpacity>
-						<Text style={css.login}>Already have an account? Login</Text>
+
+						<TouchableOpacity onPress={() => navigation.navigate('Login')}>
+							<Text style={css.login}>Already have an account? Login</Text>
+						</TouchableOpacity>
+
 						<StatusBar style="auto" />
 					</View>
 				</TouchableWithoutFeedback>

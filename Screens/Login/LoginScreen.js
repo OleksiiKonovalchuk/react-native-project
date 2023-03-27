@@ -16,7 +16,7 @@ import css from './LoginStyles'
 
 const bg = require('../../img/bg.jpg')
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
 	const [emailFocused, setEmailFocused] = useState(false)
 	const [passwordFocused, setPasswordFocused] = useState(false)
 	const [keyboardShown, setkeyboardShown] = useState(false)
@@ -86,7 +86,10 @@ export default function LoginScreen() {
 						>
 							<Text style={css.buttonText}>Login</Text>
 						</TouchableOpacity>
-						<Text style={css.login}>Don't have an account? Register</Text>
+						<TouchableOpacity onPress={() => navigation.navigate('Registration')}>
+							<Text style={css.login}>Don't have an account? Register</Text>
+						</TouchableOpacity>
+
 						<StatusBar style="auto" />
 					</View>
 				</ImageBackground>
