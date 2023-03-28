@@ -1,4 +1,4 @@
-import { Image } from 'react-native'
+import { Image, View, TouchableOpacity } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
@@ -11,6 +11,7 @@ import ProfileScreen from './Screens/ProfileScreen/ProfileScreen'
 const post = require('./img/grid.png')
 const newPost = require('./img/new.png')
 const user = require('./img/user.png')
+const logout = require('./img/log-out.png')
 
 const AuthStack = createStackNavigator()
 const MainTab = createBottomTabNavigator()
@@ -29,14 +30,20 @@ const useRoute = (isAuth) => {
 		)
 	}
 	return (
-		<MainTab.Navigator initialRouteName="Posts" backBehavior="history" sceneContainerStyle={{}}>
+		<MainTab.Navigator
+			initialRouteName="Posts"
+			backBehavior="history"
+			sceneContainerStyle={
+				{
+					// display: 'flex',
+					// alignItems: 'center',
+				}
+			}
+		>
 			<MainTab.Screen
 				name="Posts"
 				component={PostsScreen}
 				options={{
-					headerStyle: {
-						height: 100,
-					},
 					tabBarShowLabel: false,
 					tabBarIcon: ({ focused, color, size }) => {
 						return <Image source={post} />
@@ -44,7 +51,7 @@ const useRoute = (isAuth) => {
 				}}
 			/>
 			<MainTab.Screen
-				name="CreatePost"
+				name="Create Post"
 				component={CreatePostsScreen}
 				options={{
 					tabBarShowLabel: false,
