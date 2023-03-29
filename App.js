@@ -1,18 +1,40 @@
-import { StyleSheet, Text, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
+import { useState, useEffect, useCallback } from 'react'
+
+import * as SplashScreen from 'expo-splash-screen'
+import * as Font from 'expo-font'
 
 import useRoute from './router'
 
-export default function App() {
-	const routing = useRoute(true)
-	return <NavigationContainer>{routing}</NavigationContainer>
-}
+SplashScreen.preventAutoHideAsync()
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-})
+export default function App() {
+	const [isReady, setIsReady] = useState(false)
+	const routing = useRoute(true)
+
+	useEffect(() => {
+		const loadFonts = async () => {
+			try {
+				await Font.loadAsync({
+					'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
+					'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'),
+				})
+			} catch (e) {
+				console.warn(e)
+			} finally {
+				setIsReady(true)
+			}
+		}
+		loadFonts()
+	}, [])
+
+	const onLayoutReady = useCallback(async () => {
+		if (isReady) {
+			await SplashScreen.hideAsync()
+		}
+	}, [isReady])
+	if (!isReady) {
+		return null
+	}
+	return <NavigationContainer onReady={onLayoutReady}>{routing}</NavigationContainer>
+}

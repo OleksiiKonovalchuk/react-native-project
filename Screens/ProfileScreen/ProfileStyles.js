@@ -18,7 +18,7 @@ const css = StyleSheet.create({
 		// justifyContent: 'center',
 	},
 	header: {
-		fontWeight: 'bold',
+		fontFamily: 'Roboto-Medium',
 		fontSize: 30,
 		lineHeight: 35,
 		alignSelf: 'center',
@@ -63,9 +63,9 @@ const css = StyleSheet.create({
 		borderRadius: 8,
 	},
 	postTitle: {
+		fontFamily: 'Roboto-Medium',
 		marginBottom: 8,
 		fontSize: 16,
-		fontWeight: 'bold',
 	},
 	statsWrap: {
 		display: 'flex',
@@ -79,16 +79,16 @@ const css = StyleSheet.create({
 	},
 
 	comments: {
+		fontFamily: 'Roboto-Medium',
 		fontSize: 16,
-		fontWeight: '400',
 	},
 	likes: {
+		fontFamily: 'Roboto-Medium',
 		fontSize: 16,
-		fontWeight: '400',
 	},
 	location: {
 		fontSize: 16,
-		fontWeight: '400',
+		fontFamily: 'Roboto-Medium',
 		textDecorationLine: 'underline',
 	},
 	likesWrap: {
