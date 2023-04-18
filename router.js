@@ -30,20 +30,12 @@ const useRoute = (isAuth) => {
 		)
 	}
 	return (
-		<MainTab.Navigator
-			initialRouteName="Posts"
-			backBehavior="history"
-			sceneContainerStyle={
-				{
-					// display: 'flex',
-					// alignItems: 'center',
-				}
-			}
-		>
+		<MainTab.Navigator initialRouteName="Posts Screen" backBehavior="history">
 			<MainTab.Screen
-				name="Posts"
+				name="Posts Screen"
 				component={PostsScreen}
 				options={{
+					headerShown: false,
 					tabBarShowLabel: false,
 					tabBarIcon: ({ focused, color, size }) => {
 						return <Image source={post} />

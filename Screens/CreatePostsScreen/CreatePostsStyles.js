@@ -23,7 +23,29 @@ const css = StyleSheet.create({
 		justifyContent: 'center',
 		marginLeft: 10,
 	},
+	camera: {
+		width: '100%',
+		height: '100%',
+	},
+	delete: { position: 'absolute', right: 5, top: 5, zIndex: 11 },
+	deleteText: { color: 'red' },
+	makePhoto: { position: 'absolute' },
+	pictureTaken: {
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		zIndex: 10,
+		width: '40%',
+		height: '40%',
+		borderWidth: 1,
+		borderColor: 'blue',
+	},
+	ourPicture: {
+		width: '100%',
+		height: '100%',
+	},
 	photo: {
+		backgroundColor: 'transparent',
 		width: 60,
 		height: 60,
 	},
@@ -43,7 +65,7 @@ const css = StyleSheet.create({
 		borderBottomColor: 'rgba(33, 33, 33, 0.2)',
 		borderBottomWidth: 1,
 	},
-	publishButton: { paddingVertical: 16 },
+	publishButton: { paddingVertical: 16, backgroundColor: 'orange' },
 	publishBtnTitle: { textAlign: 'center', color: 'rgba(33, 33, 33, 0.2)' },
 	deleteBtn: {
 		textAlign: 'center',
